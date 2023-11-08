@@ -42,7 +42,9 @@ array[index]=null;//למחוק את המיותר בסוף
         return array;
         // TODO  פונקצית get למערך של הקלאס
     }
-
+public int capacity(){
+        return array.length;
+}
     @Override
     public int size() {
         return index;

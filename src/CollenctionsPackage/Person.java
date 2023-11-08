@@ -52,5 +52,8 @@ private String name;
         return id == person.id && Objects.equals(name, person.name);
     }
 
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }

@@ -1,10 +1,10 @@
 package firstpackage;
 import CollenctionsPackage.GlobalCollection;
 import CollenctionsPackage.Person;
+import LibraryManagingPackage.*;
 
 import java.lang.reflect.*;
-import java.sql.SQLOutput;
-import java.util.Arrays;
+import java.util.*;
 
 public class Main {
 
@@ -99,45 +99,173 @@ personalDeilsObj1.getClass().getMethod("setId", String.class).invoke(personalDei
         // </editor-fold
 //<editor-fold desc="4th lesson GlobalCollection">
 
-//        GlobalCollection <Integer>gbInt =new GlobalCollection<>();
-//        for (int i = 0; i< gbInt.toArray().length; i++){
-//            gbInt.add(10-i);
-//        }
-//        GlobalCollection <String>gbString=new GlobalCollection<>();
-//        for (int i = 0; i< gbString.toArray().length; i++){
-//            gbString.add("abcdefg".substring(0,"abcdefg".length()-i));
-//        }
-//        GlobalCollection <Person>gbPerson=new GlobalCollection<>();
-//        for (int i=0;i<gbPerson.toArray().length-1;i++){
-//            gbPerson.add(new Person(12-i,"Tehila"));
-//        }
-//        gbPerson.add(new Person(11,"Tehila"));
-//        //use printSort
-//        gbInt.printSort();
-//        gbString.printSort();
-//        gbPerson.printSort();
-//       //use remove
-//        gbPerson.remove(gbPerson.toArray()[2]);
-//        gbPerson.printAll();
-//        //use full clear toString
-//        gbPerson.add(new Person(123,"Tili"));
-//        System.out.println(    gbPerson.toString());
-//
-//        if(gbPerson.isFull()){
-//            System.out.println("clearing because its full");
-//        gbPerson.clear();}
-//        System.out.println("is empty? "+gbPerson.isEmpty());
-//        //use equals
-//        GlobalCollection<String> gb1=new GlobalCollection<>();
-//        gb1.add("abc");
-//        GlobalCollection<String> gb2=new GlobalCollection<>();
-//        gb2.add("abc");
-//        System.out.println("are equals? "+gb1.equals(gb2));
-        GlobalCollection <Integer> gb=new GlobalCollection<>();
-        Integer [] arr=gb.toArray();
-       System.out.println(gb.toArray().length);
+        GlobalCollection <Integer>gbInt =new GlobalCollection<>();
+        for (int i = 0; i< gbInt.capacity(); i++){
+            gbInt.add(10-i);
+        }
+        GlobalCollection <String>gbString=new GlobalCollection<>();
+        for (int i = 0; i< gbString.capacity(); i++){
+            gbString.add("abcdefg".substring(0,"abcdefg".length()-i));
+        }
+        GlobalCollection <Person>gbPerson=new GlobalCollection<>();
+        for (int i=0;i<gbPerson.capacity()-1;i++){
+            gbPerson.add(new Person(12-i,"Tehila"));
+        }
+        gbPerson.add(new Person(11,"Tehila"));
+        //use printSort
+        gbInt.printSort();
+        gbString.printSort();
+        gbPerson.printSort();
+       //use remove
+        gbPerson.remove(gbPerson.get(2));
+        gbPerson.printAll();
+        //use full clear toString
+        gbPerson.add(new Person(123,"Tili"));
+        System.out.println(    gbPerson.toString());
+
+        if(gbPerson.isFull()){
+            System.out.println("clearing because its full");
+        gbPerson.clear();}
+        System.out.println("is empty? "+gbPerson.isEmpty());
+        //use equals
+        GlobalCollection<String> gb1=new GlobalCollection<>();
+        gb1.add("abc");
+        GlobalCollection<String> gb2=new GlobalCollection<>();
+        gb2.add("abc");
+        System.out.println("are equals? "+gb1.equals(gb2));
+
+        //</editor-fold>
+       // <editor-fold desc="5th lesson java collection>
+        Vector<String> vec1=new Vector<>();
+        vec1.add("a");
+        vec1.add("b");
+        vec1.add("c");
+        vec1.add("d");
+        vec1.add("e");
+//        String [] s1= (String[]) vec1.toArray();
+//        String [] s2=  vec1.toArray(s1);
+        //use different functions
+        System.out.println("\ncapacity "+vec1.capacity()+"\ncontains "+vec1.contains("s")+"\nsize "+vec1.size()+"\nindexof"+vec1.indexOf("b")+"\nhashcode "+vec1.hashCode()+"\nget "+vec1.get(2)+"\nlistiterator.next "+vec1.listIterator().next()+"\ntostring "+vec1.toString());
+        //use iterator
+        System.out.println("printing as iterator");
+        Iterator<String> itr1=vec1.iterator();
+        while(itr1.hasNext()){
+            System.out.print(itr1.next()+' ');
+        }
+        System.out.println();
+        //set
+        Set<Person> set1=new HashSet<>();
+        for (int i=0;i<5;i++){
+            set1.add(new Person(i,"abcdefg".substring(i)));
+        }
+        set1.add(new Person(0,"abcdefg"));
+        System.out.println("printing with foreach the set:");
+        for (Person pI:set1
+        ) {
+            System.out.println(pI.toString());
+        }
+
+        //</editor-fold>
+//<editor-fold desc="lesson 5 Home Work java collections>
+        //set
+        Set <Person> setPerson1 =new LinkedHashSet<>();
+        setPerson1.add(new Person(1,"t"));
+        setPerson1.add(new Person(1,"t"));
+        System.out.println("num of elements in set: "+setPerson1.size());
+        Iterator<Person> iterPerson1=setPerson1.iterator();
+        System.out.println("printing iterator of set Persons");
+while(iterPerson1.hasNext()){
+    System.out.println(iterPerson1.next().toString());
+    //map
+    Map<String,Integer> map1=new LinkedHashMap<>();
+    //-hasgmap is also an option
+    map1.put("tehila",0);
+    map1.put("david",1);
+    map1.put("hodaya",2);
+    map1.put("sara",3);
+    System.out.println("printing from linked hashed map of map");
+    for (Map.Entry<String,Integer> e:map1.entrySet()) {
+        System.out.print(e+" ");
+    }
+    System.out.println("\nget: "+map1.get("tehila")+"\ncontainsKey: "+map1.containsKey("sara")+"\ncontainsVlaue: "+map1.containsValue(3)+"\nkeyset: "+map1.keySet()+"\nvalues: "+map1.values()+"\nentrySet: "+map1.entrySet());
+//conllections
+    Vector<Integer> vec =new Vector<>();
+    for (int i=0;i<10;i++){
+        vec.add(i);
+    }
+    System.out.println("just the vec:"+ vec);
+    Collections.shuffle(vec);
+    System.out.println("shuffle: "+ vec);
+    Collections.sort(vec);
+    System.out.println("sort: "+ vec);
+    System.out.println("min: "+    Collections.min(vec)+" max: "+Collections.max(vec)+" frequency of 0: "+    Collections.frequency(vec,0));
+    Collections.reverse(vec);
+    System.out.println("reverse: "+ vec);
+    Collections.swap(vec,0,2);
+    System.out.println("swap index 0 with index 2: "+ vec);
+
+
+}
+//</editor-fold>
+// <editor-fold desc="lesson 5 HomeWork Library Classes">
+    HashMap<Integer,Book> bookHashMap =new HashMap<>();
+HashSet<Lend> lendHashSet = new HashSet<>();
+ArrayList<Customer> custumerArrayList=new ArrayList<Customer>();
+Book b1 =new Book("book0",1),b2=new Book("book1",2),b3=new Book("book2",2);
+//1. add to each collection
+bookHashMap.put(0,b1);
+bookHashMap.put(1,b2);
+bookHashMap.put(2,b3);
+custumerArrayList.add(new Customer("a") );
+custumerArrayList.add(new Customer("b") );
+custumerArrayList.add(new Customer("c") );
+
+lendHashSet.add(Lend.makeLend(0,bookHashMap,0));
+
+        lendHashSet.add(Lend.makeLend(1,bookHashMap,1));
+        lendHashSet.add(Lend.makeLend(2,bookHashMap,2));
+//2. search
+        System.out.println("search: book-> "+bookHashMap.get(0));
+Iterator <Customer>iter1=custumerArrayList.iterator();
+while(iter1.hasNext()){
+    if(iter1.next().getName()=="c")
+        System.out.println("found in array list");
+}
+//3. remove
+if(bookHashMap.remove(0,b1)) System.out.println("removed b1 from books!");
+custumerArrayList.remove(0);
+lendHashSet.remove(new Lend(0,0,new Date()));
+//4.print
+        for (Book b:bookHashMap.values()
+             ) {
+            System.out.print(" "+b);
+        }
+//5.sort:implement compareable
+Collections.sort(custumerArrayList);
+System.out.println("\nsorted customer list"+custumerArrayList);
+//map functions
+        System.out.println("map functions: get "+bookHashMap.get(1));
+        Iterator<Map.Entry<Integer, Book>> iterator = bookHashMap.entrySet().iterator();
+        while(iterator.hasNext()){
+           if( iterator.next().getValue().getName().startsWith("book2"))
+           {
+               System.out.println("remove book that starts with book2");
+               iterator.remove();
+           }
+        }
+        System.out.println("print: "+bookHashMap+" keys&values by entryset: "+bookHashMap.entrySet()+"keys: "+bookHashMap.keySet()+" values: "+bookHashMap.values());
+//collections methods
+Vector <Integer> integerCollection=new Vector<>();
+for (int i=0;i<10;i++)
+integerCollection.add(i+1);
+        System.out.println("integers: "+integerCollection);
+Collections.sort(integerCollection);
+System.out.println("binaty seasrch of 3:"+Collections.binarySearch(integerCollection,3));
+     Collections.rotate(integerCollection,3);
+        System.out.println("rotate 3: "+integerCollection);
+        System.out.println( "n copies: "+ Collections.nCopies(6,":*)"));
 
         //</editor-fold>
 
-    }
+        }
 }
