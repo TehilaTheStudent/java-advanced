@@ -1,4 +1,4 @@
-package CollenctionsPackage;
+package Person_package;
 
 import java.util.Objects;
 

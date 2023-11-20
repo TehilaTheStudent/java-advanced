@@ -1,17 +1,26 @@
 package Main_package;
 
 import CollenctionsPackage.GlobalCollection;
+<<<<<<< HEAD
 import CollenctionsPackage.Person;
 import LibraryManagingPackage.*;
 import firstpackage.*;
 import secondpackage.Worker;
+=======
+import Person_package.Person;
+import LibraryManagingPackage.*;
+import firstpackage.*;
+>>>>>>> 58c38b3242ff1e4dc23d5a5f3f53d0edc96cf069
 import stream_lambda_collections_package.Person_2;
 import stream_lambda_collections_package.Product;
 
 import java.lang.reflect.*;
 import java.util.*;
+<<<<<<< HEAD
 import java.util.function.Function;
 import java.util.jar.JarEntry;
+=======
+>>>>>>> 58c38b3242ff1e4dc23d5a5f3f53d0edc96cf069
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -358,7 +367,11 @@ public class Main {
 //        Car c = new Car();
 //        c.Print();
         //</editor-fold desc="6th lesson HomeWork Stream>
+<<<<<<< HEAD
         //<editor-fold desc="lesspn 6 stream Hpmework">
+=======
+        //<editor-fold desc="lesson 6 stream Hpmework">
+>>>>>>> 58c38b3242ff1e4dc23d5a5f3f53d0edc96cf069
         System.out.println("<><><><><><><><><><><><><><><><><><><>");
         //there is a need to restore the stream each time couse certain functions couse it to end! solution: do list each time convert to stream!
         List<Product> productStream = Product.getProducts();
@@ -391,6 +404,7 @@ Collections.sort(integerList,(i,j)->i+j);
 
 
         //</editor-fold>
+<<<<<<< HEAD
         System.out.println("<><><><><><><><><>");
     }
 
@@ -398,6 +412,87 @@ Collections.sort(integerList,(i,j)->i+j);
         //    תפקיד הפונקציה היא לקבל אוסף מסוג מחרוזת ולהחזיר את הסדרה המקבילה לה//
         return list == null || list.isEmpty() ? Stream.empty() : list.stream();
     }
+=======
+        System.out.println("<><><><><><><><><><><><>");
+        System.out.println("<><><><><><><><><><><><>");
+        System.out.println("<><><><><><><><><><><><>");
+        //<editor-fold desc="lesson 7 exception">
+        List<Integer> integerList1;
+        try {
+            integerList1 = null;
+            if(integerList1==null)
+                throw new NullPointerException("NullPointerException!");
+            else
+            integerList1.add(9);
+        }
+        catch (NullPointerException e) {
+            System.out.println("NullPointerException! by user");
+            System.out.println(e.getMessage());
+        }
+        try {
+            integerList1 = new ArrayList<>();
+            integerList1.add(1);
+            integerList1.add(2);
+            if(integerList1.size()<=9)
+                throw new IndexOutOfBoundsException("IndexOutOfBoundsException! by user");
+            else
+            integerList1.get(9);
+        }
+        catch (IndexOutOfBoundsException e) {
+            System.out.println("IndexOutOfBoundsException!");
+            System.out.println(e.getMessage());
+        }
+        try {
+            integerList1 = new ArrayList<>();
+
+
+            HashSet<Integer> integerHashSet = new HashSet<>(integerList1);
+            HashSet hashSet = (HashSet) integerList1;
+        }
+        catch (ClassCastException e) {
+            System.out.println("ClassCastException!");
+            System.out.println(e.getMessage());
+        }
+        try {
+            Float.parseFloat("434.9b");
+        }
+        catch (NumberFormatException e) {
+            System.out.println("NumberFormatException!");
+            System.out.println(e.getMessage());
+        }
+        try {
+            funcX(2);
+        }
+        catch (StackOverflowError e) {
+            System.out.println("StackOverflowoutor!");
+            System.out.println(e.getMessage());
+        }
+        try{
+            int tryInt=9/0;}
+        catch (ArithmeticException e) {
+            System.out.println("ArithmeticException!");
+            System.out.println(e.getMessage());
+        }
+        try{
+            int [] arr1={1,2,3,32,5,7,43,3};
+            float [] arr2={3.5f,6.54f,2.53f,554f,54.54f,432.432f};
+            System.arraycopy(arr2,0,arr1,2,3);
+        }
+
+        catch (ArrayStoreException e) {
+
+            System.out.println("ArrayStoreException!");
+            System.out.println(e.getMessage());
+        }
+
+        // </editor-fold>
+        System.out.println("<><><><><><><><><>");
+    }
+
+  public static void funcX(int x){funcY(x);}
+  public static void funcY(int y){funcX(y);}
+
+>>>>>>> 58c38b3242ff1e4dc23d5a5f3f53d0edc96cf069
 
 }
 
