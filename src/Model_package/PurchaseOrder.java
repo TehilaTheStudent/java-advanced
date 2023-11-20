@@ -3,10 +3,9 @@ package Model_package;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class PurchaseOrder {
+public class PurchaseOrder <T extends Product>{
     private Customer orderingCustomer;
-   private ArrayList<? extends Product> productsList;
-   //private ArrayList<Product> productsList;
+   private ArrayList<T> productsList;
 private LocalDate orderDate;
     public PurchaseOrder(Customer orderingCustomer) {
         this.orderingCustomer = orderingCustomer;
@@ -22,11 +21,11 @@ private LocalDate orderDate;
         this.orderingCustomer = orderingCustomer;
     }
 
-    public ArrayList<? extends Product> getProductsList() {
+    public ArrayList<T> getProductsList() {
         return productsList;
     }
 
-    public void setProductsList(ArrayList<Product> productsList) {
+    public void setProductsList(ArrayList<T> productsList) {
         this.productsList = productsList;
     }
 
