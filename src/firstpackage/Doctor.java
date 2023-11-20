@@ -13,7 +13,7 @@ private int experience;
     }
 
     @Override
-    protected int calcBonus() {
+    public int calcBonus() {
        return getBasisBonus()+experience+title.bonus;
     }
 

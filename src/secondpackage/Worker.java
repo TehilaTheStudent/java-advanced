@@ -7,6 +7,10 @@ public class Worker extends Rectangle {
 public void pro(){
     System.out.println("pro at worker");
 }
+    public void prot(){
+        System.out.println("prot at worker");
+    }
+
 public String s="w attr";
     public void workermethod() {
     }

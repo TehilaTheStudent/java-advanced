@@ -1,7 +1,5 @@
 package firstpackage;
-enum Days{
-    SUNDAY,MONDAY,TUESDAY,WEDNESDAY,THURSDAY, FRIDAY  ;
-}
+
 
 public abstract class Volunteer implements Comparable<Volunteer>{
     @Override
@@ -44,7 +42,9 @@ public abstract class Volunteer implements Comparable<Volunteer>{
     public void setDay(Days day) {
         this.day = day;
     }
-
+    public enum Days{
+        SUNDAY,MONDAY,TUESDAY,WEDNESDAY,THURSDAY, FRIDAY  ;
+    }
     public int getBasisBonus() {
         return basisBonus;
     }
