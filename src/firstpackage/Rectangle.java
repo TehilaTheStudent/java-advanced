@@ -12,7 +12,7 @@ public   class Rectangle {
  static int staticint;
 public  void pub(){}
     private void priv(){}
-    private void pro(){
+    public void pro(){
         System.out.println("pro at rectangle");
     }
     public String toString(){

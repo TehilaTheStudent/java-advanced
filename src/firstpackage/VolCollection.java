@@ -14,7 +14,7 @@ public class VolCollection {
             System.out.println("no space for "+newVol.getPerDet().getFirstName()+" to join the collction");
         }
     }
-    public Volunteer search(int type,int minage,Days day){
+    public Volunteer search(int type, int minage, Volunteer.Days day){
         for (Volunteer i:arrv) {
       if(type==1&&i instanceof Doctor&&i.getPerDet().getAge()>minage&&i.getDay()== day){
           i.setTaken(true);

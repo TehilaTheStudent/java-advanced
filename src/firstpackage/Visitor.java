@@ -16,7 +16,7 @@ public class Visitor extends Volunteer{
     }
 
     @Override
-    protected int calcBonus() {
+    public int calcBonus() {
         return getBasisBonus()+ state.bonus;
     }
 
